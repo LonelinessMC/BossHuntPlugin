@@ -1,0 +1,30 @@
+main: it.loneliness.mc.BossHunt
+name: BossHunt
+version: 0.1
+commands:
+    bh:
+      description: Sets a compass held in the player's hand to point to the dragon egg
+      usage: /<command>
+      permission: bosshunt.*
+      permission-message: You need to have permission <permission> to use this command
+
+    bh trackboss:
+      description: Sets a compass held in the player's hand to point to the dragon egg
+      usage: /<command>
+      permission: bosshunt.trackboss
+      permission-message: You need to have permission <permission> to use this command
+      
+    trackboss:
+      description: Shows the current owner of the dragon egg
+      usage: /<command>
+      permission: bosshunt.trackboss
+      permission-message: You need to have permission <permission> to use this command
+permissions:
+    bosshunt.*:
+        description: Gives access to all Egg Hunt commands
+        children:
+            bosshunt.trackboss: true
+        default: true
+    bosshunt.trackboss:
+        description: Allows you to locate the dragon egg using /locateegg
+        default: true
